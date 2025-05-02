@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Header">
+      <UniqueIdentifier>{d8b6148f-c849-4f14-9729-b33dcf61f702}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Header\Core">
+      <UniqueIdentifier>{ce35eda7-f62a-4c3e-a9eb-523d73a2d797}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Header\GamePlay">
+      <UniqueIdentifier>{c5de3a9a-158c-47a2-8c1a-734da75fac10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Header\GamePlay\Ball">
+      <UniqueIdentifier>{4d39914e-e06d-4529-b5e7-a934414baf26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Header\GamePlay\Paddle">
+      <UniqueIdentifier>{8bea0c0c-f45c-487c-a202-0716d6fbda34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Header\GamePlay\Boundary">
+      <UniqueIdentifier>{690ba6d0-d7a4-4ed9-add2-cf254b75d93d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Header\Events">
+      <UniqueIdentifier>{c71873a9-8740-4e25-92d7-14cc421b5415}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Header\Utility">
+      <UniqueIdentifier>{c84f9827-7762-4611-ba40-067cc04d41b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Header\UI">
+      <UniqueIdentifier>{e288bdfd-f8c7-4aaf-b03e-999455cd5046}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Gameplay\Boundary\Boundary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Gameplay\Ball\Ball.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Gameplay\Paddle\Paddle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Gameplay\GameplayManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Event\EventManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\TimeService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\UI\UIService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\GameWindowManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header\Gameplay\Ball\Ball.h">
+      <Filter>Header Files\Header\GamePlay\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Gameplay\Boundary\Boundary.h">
+      <Filter>Header Files\Header\GamePlay\Boundary</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Event\EventManager.h">
+      <Filter>Header Files\Header\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Gameplay\GameplayManager.h">
+      <Filter>Header Files\Header\GamePlay</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Core\GameWindowManager.h">
+      <Filter>Header Files\Header\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Gameplay\Paddle\Paddle.h">
+      <Filter>Header Files\Header\GamePlay\Paddle</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utility\TimeService.h">
+      <Filter>Header Files\Header\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\UI\UIService.h">
+      <Filter>Header Files\Header\UI</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
