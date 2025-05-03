@@ -16,7 +16,7 @@ namespace Core
 		game_window->create(
 			VideoMode::getDesktopMode(),//getscreenResolution
 				game_title,//window title
-					sf::Style::Fullscreen //Fullscreen mode
+					sf::Style::Default //Fullscreen mode
 			);
 	}
 
