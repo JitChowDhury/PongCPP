@@ -13,9 +13,10 @@ namespace Core
 	void GameWindowManager::createGameWindow() {
 
 		// Create the window with specified dimensions and title
-			game_window->create(
-				VideoMode(game_window_width, game_window_height),
-				game_title
+		game_window->create(
+			VideoMode::getDesktopMode(),//getscreenResolution
+				game_title,//window title
+					sf::Style::Fullscreen //Fullscreen mode
 			);
 	}
 
