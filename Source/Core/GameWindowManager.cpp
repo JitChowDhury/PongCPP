@@ -1,4 +1,5 @@
 #include "../../Header/Core/GameWindowManager.h"
+#include<string>
 namespace Core
 {
 	void GameWindowManager::initialize()
@@ -14,7 +15,7 @@ namespace Core
 
 		// Create the window with specified dimensions and title
 		game_window->create(
-			VideoMode::getDesktopMode(),//getscreenResolution
+			sf::VideoMode(1320,720),//getscreenResolution
 				game_title,//window title
 					sf::Style::Default //Fullscreen mode
 			);
