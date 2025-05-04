@@ -1,4 +1,5 @@
 #include "../../Header/Event/EventManager.h"
+#include<iostream>
 
 namespace Event
 {
@@ -18,6 +19,13 @@ namespace Event
 				game_window->close();
 				
 			}
+			//Handle left mouse button click
+			if (isLeftMouseButtonClicked())
+			{
+				sf::Vector2i position = sf::Mouse::getPosition(*game_window);
+					//log the pos
+					std::cout << "Left mouse clock at: " << position.x << " , " << position.y << std::endl;
+			}
 		}
 
 	}
@@ -25,6 +33,12 @@ namespace Event
 	bool EventManager::isKeyPressed(sf::Keyboard::Key key)
 	{
 		return sf::Keyboard::isKeyPressed(key);
+	}
+
+	bool EventManager::isLeftMouseButtonClicked()
+	{
+		//detect if left mouse button is clicked
+		return (sf::Mouse::isButtonPressed(sf::Mouse::Left));
 	}
 
 
