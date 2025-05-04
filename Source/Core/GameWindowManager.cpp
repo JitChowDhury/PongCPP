@@ -37,6 +37,16 @@ namespace Core
 		
     }
 
+	void GameWindowManager::clearGameWindow()
+	{
+		game_window->clear();
+	}
+
+	void GameWindowManager::displayGameWindow()
+	{
+		return game_window->display();
+	}
+
 	RenderWindow* GameWindowManager::getGameWindow() {
 		return game_window;
 	}
