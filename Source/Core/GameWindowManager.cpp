@@ -1,55 +1,49 @@
+// Include GameWindowManager header
 #include "../../Header/Core/GameWindowManager.h"
-#include<string>
+// Include string for game_title
+#include <string>
+// Core namespace
 namespace Core
 {
-	void GameWindowManager::initialize()
-	{
-		//Allocate memory for the render window object
-		game_window = new RenderWindow();
-		//set up the window with configured properties
-		createGameWindow();
-
-	}
-
-	void GameWindowManager::createGameWindow() {
-
-		// Create the window with specified dimensions and title
-		game_window->create(
-			sf::VideoMode(1320,720),//getscreenResolution
-				game_title,//window title
-					sf::Style::Default //Fullscreen mode
-			);
-	}
-
-	bool GameWindowManager::isGameRunning() {
-		// Return true if window is open, false if closed
-		return game_window->isOpen();
-	}
-
-	void GameWindowManager::render() {
-		// Clear window with orange color (R:200, G:50, B:50, A:255)
-		game_window->clear(sf::Color(200, 50, 50, 255));
-
-		//draw shapes, sprites, etc 
-
-	// Display the changes
-		game_window->display();
-		
+    // Set up window
+    void GameWindowManager::initialize()
+    {
+        game_window = new RenderWindow();
+        createGameWindow();
     }
-
-	void GameWindowManager::clearGameWindow()
-	{
-		game_window->clear();
-	}
-
-	void GameWindowManager::displayGameWindow()
-	{
-		return game_window->display();
-	}
-
-	RenderWindow* GameWindowManager::getGameWindow() {
-		return game_window;
-	}
+    // Create window with size, title
+    void GameWindowManager::createGameWindow()
+    {
+        game_window->create(
+            sf::VideoMode(1280, 720), // Fixed size
+            game_title,
+            sf::Style::Default
+        );
+    }
+    // Check if window is open
+    bool GameWindowManager::isGameRunning()
+    {
+        return game_window->isOpen();
+    }
+    // Draw graphics (clear, display)
+    void GameWindowManager::render()
+    {
+        game_window->clear(sf::Color(200, 50, 50, 255));
+        game_window->display();
+    }
+    // Clear window
+    void GameWindowManager::clearGameWindow()
+    {
+        game_window->clear();
+    }
+    // Display window
+    void GameWindowManager::displayGameWindow()
+    {
+        game_window->display();
+    }
+    // Get window pointer
+    RenderWindow* GameWindowManager::getGameWindow()
+    {
+        return game_window;
+    }
 }
-
-
