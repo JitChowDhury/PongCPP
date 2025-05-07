@@ -18,4 +18,8 @@ namespace Gameplay
 		player1->render(game_window);
 		player2->render(game_window);
 	}
+	void GameplayManager::update()
+	{
+		ball->update();
+	}
 }

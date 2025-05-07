@@ -27,6 +27,7 @@ namespace Core
     // Update game state (empty)
     void GameLoop::update()
     {
+        gameplay_manager->update();
     }
     // Draw graphics
     void GameLoop::render()

@@ -12,6 +12,9 @@ namespace Gameplay
         Texture pong_ball_texture;
         Sprite pong_ball_sprite;
 
+        float ball_speed = .5f;
+        Vector2f velocity = Vector2f(ball_speed, ball_speed);
+
         const string texture_path = "Assets/Textures/Ball.png";
 
         const float scale_x = 0.06f;
@@ -22,6 +25,7 @@ namespace Gameplay
 
         void loadTexture();
         void initializeVariables();
+        void move();
 
     public:
 
