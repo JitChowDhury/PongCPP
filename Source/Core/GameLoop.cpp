@@ -12,7 +12,7 @@ namespace Core
         event_manager = new EventManager();
         // Initialize window
         game_window_manager->initialize();
-        gameplay_manager = new GameplayManager();
+        gameplay_manager = new GameplayManager(event_manager);
     }
     // Check if window is open
     bool GameLoop::isGameRunning()
