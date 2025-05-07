@@ -12,7 +12,7 @@ namespace Gameplay
         Texture pong_ball_texture;
         Sprite pong_ball_sprite;
 
-        float ball_speed = .5f;
+        float ball_speed = .25f;
         Vector2f velocity = Vector2f(ball_speed, ball_speed);
 
         const string texture_path = "Assets/Textures/Ball.png";
