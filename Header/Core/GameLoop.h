@@ -5,11 +5,13 @@
 // Include headers for GameWindowManager and EventManager
 #include "../../Header/Core/GameWindowManager.h"
 #include "../../Header/Event/EventManager.h"
+#include "../../Header/Gameplay/GameplayManager.h"
 // Use namespaces for SFML, Core, Event, and std
 using namespace sf;
 using namespace Core;
 using namespace Event;
 using namespace std;
+using namespace Gameplay;
 
 // Core namespace for game classes
 namespace Core
@@ -21,6 +23,7 @@ namespace Core
         // Pointers to window and event managers (has-a relationship)
         GameWindowManager* game_window_manager;
         EventManager* event_manager;
+        GameplayManager* gameplay_manager;
     public:
         // Set up game
         void initialize();
