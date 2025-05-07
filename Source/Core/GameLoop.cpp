@@ -12,6 +12,7 @@ namespace Core
         event_manager = new EventManager();
         // Initialize window
         game_window_manager->initialize();
+        gameplay_manager = new GameplayManager();
     }
     // Check if window is open
     bool GameLoop::isGameRunning()
@@ -31,6 +32,9 @@ namespace Core
     void GameLoop::render()
     {
         game_window_manager->clearGameWindow();
+        //render the paddles and ball
+        gameplay_manager->render(game_window_manager->getGameWindow());
+
         game_window_manager->displayGameWindow();
     }
 }
