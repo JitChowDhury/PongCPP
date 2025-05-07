@@ -1,6 +1,10 @@
 #include"../../Header/Gameplay/Paddle/Paddle.h"
 namespace Gameplay
 {
+	RectangleShape Paddle::getPaddleSprite()
+	{
+		return paddle_sprite;
+	}
 	Paddle::Paddle(float pos_x, float pos_y)
 	{
 		paddle_sprite.setSize(Vector2f(paddle_width, paddle_height));
