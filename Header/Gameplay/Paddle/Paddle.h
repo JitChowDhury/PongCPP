@@ -1,7 +1,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "../../Header/Utility/TimeService.h"
 using namespace sf;
+using namespace Utility;
 
 // Namespace for gameplay-related classes
 namespace Gameplay
@@ -16,6 +18,7 @@ namespace Gameplay
         // Paddle Dimensions
         const float paddle_width = 20.0f;  // Paddle width
         const float paddle_height = 140.0f; // Paddle height
+        int speedMultiplier = 1000.0f;
 
         // Movement
         float paddleSpeed = 0.8f;          // Movement speed (pixels per frame)
@@ -24,7 +27,6 @@ namespace Gameplay
 
         // Private Functions
         void createPaddle(float position_x, float position_y); // Set up paddle size and position
-        void movePaddle(bool move_up_key_pressed, bool move_down_key_pressed); // Move paddle based on input
 
     public:
         // Constructor
@@ -37,7 +39,8 @@ namespace Gameplay
         void reset(float position_x, float position_y); // Reset paddle position (not implemented)
 
         // Game Logic
-        void update(bool move_up_key_pressed, bool move_down_key_pressed); // Update paddle position
+        void movePaddle(bool move_up_key_pressed, bool move_down_key_pressed, TimeService* time_service);
+        void update(bool move_up_key_pressed, bool move_down_key_pressed, TimeService* time_service);
         void render(RenderWindow* game_window); // Draw paddle to the window
     };
 }

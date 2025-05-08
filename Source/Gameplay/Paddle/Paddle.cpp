@@ -9,6 +9,11 @@ namespace Gameplay
         paddle_sprite.setSize(Vector2f(paddle_width, paddle_height)); // Set size to 20x140
         paddle_sprite.setPosition(pos_x, pos_y); // Set initial position
     }
+    void Paddle::createPaddle(float position_x, float position_y)
+    {
+        paddle_sprite.setSize(Vector2f(paddle_width, paddle_height));
+        paddle_sprite.setPosition(position_x, position_y);
+    }
 
     // Get paddle shape for collision detection
     RectangleShape Paddle::getPaddleSprite()
@@ -17,24 +22,24 @@ namespace Gameplay
     }
 
     // Move paddle based on input, respecting boundaries
-    void Paddle::movePaddle(bool move_up_key_pressed, bool move_down_key_pressed)
+    void Paddle::movePaddle(bool move_up_key_pressed, bool move_down_key_pressed, TimeService* time_service)
     {
         // Move up if key pressed and not at top boundary
         if (move_up_key_pressed && paddle_sprite.getPosition().y > topBoundary)
         {
-            paddle_sprite.move(0, -paddleSpeed); // Move up at 0.8 pixels/frame
+            paddle_sprite.move(0, -paddleSpeed * time_service->getDeltaTime() * speedMultiplier); // Move up at 0.8 pixels/frame
         }
         // Move down if key pressed and not at bottom boundary
         if (move_down_key_pressed && paddle_sprite.getPosition().y + paddle_sprite.getSize().y < bottomBoundary)
         {
-            paddle_sprite.move(0, paddleSpeed); // Move down at 0.8 pixels/frame
+            paddle_sprite.move(0, paddleSpeed * time_service->getDeltaTime() * speedMultiplier); // Move down at 0.8 pixels/frame
         }
     }
 
     // Update paddle position based on input
-    void Paddle::update(bool move_up_key_pressed, bool move_down_key_pressed)
+    void Paddle::update(bool move_up_key_pressed, bool move_down_key_pressed, TimeService* time_service)
     {
-        movePaddle(move_up_key_pressed, move_down_key_pressed);
+        movePaddle(move_up_key_pressed, move_down_key_pressed,time_service);
     }
 
     // Draw paddle to the game window
