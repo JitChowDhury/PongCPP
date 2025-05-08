@@ -36,6 +36,9 @@ namespace Gameplay
         const float position_x = 615.0f; // Starting x-position (center of 1280px window)
         const float position_y = 335.0f; // Starting y-position (slightly below center of 720px window)
 
+        bool had_left_collison = false;
+        bool had_right_collison = false;
+
         // Movement
         Vector2f velocity;              // Velocity vector (x, y) for ball movement
         const float ball_speed = 5.0f;  // Base speed of the ball (pixels per second)
@@ -71,6 +74,12 @@ namespace Gameplay
         // Collision and Update
         void onCollision(Paddle* player1, Paddle* player2); // Handle all collision checks
         void update(Paddle* player1, Paddle* player2, TimeService* timeService); // Update ball state
+
+        bool isLeftCollisionOccurred();
+        void updateLeftCollisionState(bool value);
+
+        bool isRightCollisionOccurred();
+        void updateRightCollisionState(bool value);
 
         // Rendering
         void render(RenderWindow* game_window); // Draw the ball to the window

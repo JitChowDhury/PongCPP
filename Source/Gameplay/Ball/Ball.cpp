@@ -106,6 +106,26 @@ namespace Gameplay
         }
     }
 
+    bool Ball::isLeftCollisionOccurred()
+    {
+        return had_left_collison;
+    }
+
+    void Ball::updateLeftCollisionState(bool value)
+    {
+        had_left_collison = value;
+    }
+
+    bool Ball::isRightCollisionOccurred()
+    {
+        return had_right_collison;
+    }
+
+    void Ball::updateRightCollisionState(bool value)
+    {
+        had_right_collison = value;
+    }
+
     // Check if ball goes out of bounds (left/right), reset if true
     void Ball::handleOutofBoundCollision()
     {
@@ -114,11 +134,13 @@ namespace Gameplay
         // Ball goes past left boundary (Player 2 scores)
         if (ball_bounds.left <= left_boundary)
         {
+            updateLeftCollisionState(true);
             reset(); // Reset ball to center
         }
         // Ball goes past right boundary (Player 1 scores)
         else if (ball_bounds.left + ball_bounds.width >= right_boundary)
         {
+            updateRightCollisionState(true);
             reset(); // Reset ball to center
         }
     }
