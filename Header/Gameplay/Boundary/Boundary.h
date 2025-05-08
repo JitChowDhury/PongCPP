@@ -1,56 +1,69 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
+// Namespace for gameplay-related classes
 namespace Gameplay
 {
-	class Boundary
-	{
-	private:
-		RectangleShape topBoundary;
-		RectangleShape bottomBoundary;
-		RectangleShape leftBoundary;
-		RectangleShape rightBoundary;
-		RectangleShape centerLine;
+    // Boundary class: Defines the play area with top, bottom, left, right boundaries, and a center line
+    class Boundary
+    {
+    private:
+        // Boundary Shapes
+        RectangleShape topBoundary;     // Top boundary of the play area
+        RectangleShape bottomBoundary;  // Bottom boundary of the play area
+        RectangleShape leftBoundary;    // Left boundary of the play area
+        RectangleShape rightBoundary;   // Right boundary of the play area
+        RectangleShape centerLine;      // Center line dividing the play area
 
-		const float horizontal_boundary_width = 1280.0f;
-		const float horizontal_boundary_height = 20.0f;
+        // Horizontal Boundary Dimensions
+        const float horizontal_boundary_width = 1280.0f;  // Width of top/bottom boundaries
+        const float horizontal_boundary_height = 20.0f;   // Height of top/bottom boundaries
 
-		const float top_position_x = 0.0f;
-		const float top_position_y = 0.0f;
+        // Horizontal Boundary Positions
+        const float top_position_x = 0.0f;    // Top boundary x-position
+        const float top_position_y = 0.0f;    // Top boundary y-position
+        const float bottom_position_x = 0.0f; // Bottom boundary x-position
+        const float bottom_position_y = 700.0f; // Bottom boundary y-position
 
-		const float bottom_position_x = 0.0f;
-		const float bottom_position_y = 700.0f;
+        // Vertical Boundary Dimensions
+        const float vertical_boundary_width = 20.0f;   // Width of left/right boundaries
+        const float vertical_boundary_height = 720.0f; // Height of left/right boundaries
 
-		const float vertical_boundary_width = 20.0f;
-		const float vertical_boundary_height = 720.0f;
+        // Vertical Boundary Positions
+        const float left_position_x = 0.0f;    // Left boundary x-position
+        const float left_position_y = 0.0f;    // Left boundary y-position
+        const float right_position_x = 1260.0f; // Right boundary x-position
+        const float right_position_y = 0.0f;   // Right boundary y-position
 
-		const float left_position_x = 0.0f;
-		const float left_position_y = 0.0f;
+        // Center Line Dimensions
+        const float center_line_width = 10.0f;   // Width of center line
+        const float center_line_height = 680.0f; // Height of center line
 
-		const float right_position_x = 1260.0f;
-		const float right_position_y = 0.0f;
+        // Center Line Position
+        const float center_line_position_x = 640.0f; // Center line x-position (middle of screen)
+        const float center_line_position_y = 20.0f;  // Center line y-position (below top boundary)
 
-		const float center_line_width = 10.0f;
-		const float center_line_height = 680.0f;
+        // Colors
+        const Color boundary_color = Color::Blue;    // Color of boundaries
+        const Color center_line_color = Color::White; // Color of center line
 
-		const float center_line_position_x = 640.0f;
-		const float center_line_position_y = 20.0f;
+        // Private Functions
+        void createTopBoundary();    // Set up top boundary
+        void createBottomBoundary(); // Set up bottom boundary
+        void createLeftBoundary();   // Set up left boundary
+        void createRightBoundary();  // Set up right boundary
+        void createCenterLine();     // Set up center line
 
-		const Color boundary_color = Color::Blue;
-		const Color center_line_color = Color::White;
+    public:
+        // Constructor
+        Boundary();                  // Initialize all boundaries and center line
 
-		void createTopBoundary();
-		void createBottomBoundary();
-		void createLeftBoundary();
-		void createRightBoundary();
+        // Game Logic
+        void update();               // Update boundaries (placeholder, currently empty)
 
-		void createCenterLine();
-
-	public:
-		Boundary();
-
-		void update();
-		void render(RenderWindow* game_window);
-	};
+        // Rendering
+        void render(RenderWindow* game_window); // Draw boundaries and center line
+    };
 }
