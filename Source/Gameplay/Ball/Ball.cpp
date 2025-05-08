@@ -74,10 +74,15 @@ namespace Gameplay
         FloatRect ball_bounds = pong_ball_sprite.getGlobalBounds(); // Get ball's bounding box
 
         // Hit top boundary while moving up, or bottom boundary while moving down
-        if ((ball_bounds.top <= top_boundary && velocity.y < 0) ||
-            (ball_bounds.top + ball_bounds.height >= bottom_boundary && velocity.y > 0))
+        if (ball_bounds.top <= top_boundary && velocity.y < 0)
         {
-            velocity.y = -velocity.y;  // Reverse vertical direction (e.g., 0.25 to -0.25)
+            velocity.y = -velocity.y;  // Reverse vertical direction
+            SoundManager::PlaySoundEffect(SoundType::BALL_BOUNCE);
+        }
+        if (ball_bounds.top + ball_bounds.height >= bottom_boundary && velocity.y > 0)
+        {
+            velocity.y = -velocity.y;  // Reverse vertical direction
+            SoundManager::PlaySoundEffect(SoundType::BALL_BOUNCE);
         }
     }
 
@@ -96,12 +101,14 @@ namespace Gameplay
         // Bounce off Player 1's paddle (left side) if moving left
         if (ball_bounds.intersects(Player1PaddleBounds) && velocity.x < 0)
         {
+            SoundManager::PlaySoundEffect(SoundType::BALL_BOUNCE);
             velocity.x = -velocity.x;  // Reverse horizontal direction (e.g., -0.25 to 0.25)
         }
 
         // Bounce off Player 2's paddle (right side) if moving right
         if (ball_bounds.intersects(player2PaddleBounds) && velocity.x > 0)
         {
+            SoundManager::PlaySoundEffect(SoundType::BALL_BOUNCE);
             velocity.x = -velocity.x;  // Reverse horizontal direction (e.g., 0.25 to -0.25)
         }
     }
