@@ -56,7 +56,7 @@ namespace Gameplay
     // Update boundaries (placeholder, currently empty)
     void Boundary::update()
     {
-        // No dynamic updates needed for static boundaries
+       
     }
 
     // Draw all boundaries and center line to the game window
