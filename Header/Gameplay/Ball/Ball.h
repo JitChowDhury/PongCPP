@@ -14,13 +14,11 @@ namespace Gameplay
         // Ball Appearance
         Texture pong_ball_texture;      // Texture for the ball sprite
         Sprite pong_ball_sprite;        // Sprite to display the ball
+        const std::string texture_path = "Assets/Textures/Ball.png";
 
         // Movement
         float ball_speed = 0.25f;       // Speed of the ball (pixels per frame)
         Vector2f velocity = Vector2f(ball_speed, ball_speed); // Initial velocity (right-down)
-
-        // File Path
-        const string texture_path = "Assets/Textures/Ball.png"; // Path to ball texture
 
         // Scaling
         const float scale_x = 0.06f;    // Scale factor for ball width (6% of original)

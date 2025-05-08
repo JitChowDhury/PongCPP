@@ -18,5 +18,5 @@ namespace Utility
         void initialize();
         void update();
         float getDeltaTime();
-    }
+    };
 }
