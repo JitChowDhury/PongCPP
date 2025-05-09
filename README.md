@@ -30,6 +30,7 @@ Run Pong.exe.
 
 # Clone the repository
 git clone https://github.com/yourusername/pong.git
+
 cd pong
 
 # Install SFML (Linux example)
@@ -37,20 +38,27 @@ sudo apt install libsfml-dev
 
 # Build using CMake
 mkdir build && cd build
+
 cmake ..
+
 cmake --build .
 
 # Run the game
 ./Pong   # or Pong.exe on Windows
 
 # Clone the repository
-git clone (https://github.com/JitChowDhury/PongCPP.git)
+git clone https://github.com/JitChowDhury/PongCPP.git
+
 cd pong
 # Install SFML (Linux example)
+
 sudo apt install libsfml-dev
+
 # Build using CMake
 mkdir build && cd build
+
 cmake ..
+
 cmake --build .
 # Run the game
 ./Pong   # or Pong.exe on Windows
