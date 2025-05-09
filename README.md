@@ -1,6 +1,10 @@
 🎮 Pong
 Pong is a classic two-player arcade game where each player controls a paddle to hit a ball back and forth. Score points by getting the ball past your opponent’s paddle. This version includes sound effects, background music, and a live score display.
 
+#SCREENSHOT
+![image](https://github.com/user-attachments/assets/2fc0dba1-abb0-4e06-aa07-7cba9d97b75d)
+
+
 🛠️ Features
 2-player paddle-based gameplay
 Realistic ball physics
