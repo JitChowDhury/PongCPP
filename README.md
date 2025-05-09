@@ -27,9 +27,7 @@ Extract the archive.
 Run Pong.exe.
 
 🛠️ Build from Source
-bash
-Copy
-Edit
+
 # Clone the repository
 git clone https://github.com/yourusername/pong.git
 cd pong
@@ -44,6 +42,19 @@ cmake --build .
 
 # Run the game
 ./Pong   # or Pong.exe on Windows
+
+# Clone the repository
+git clone (https://github.com/JitChowDhury/PongCPP.git)
+cd pong
+# Install SFML (Linux example)
+sudo apt install libsfml-dev
+# Build using CMake
+mkdir build && cd build
+cmake ..
+cmake --build .
+# Run the game
+./Pong   # or Pong.exe on Windows
+
 🎮 How to Play
 Controls:
 Player 1: W (Up), S (Down)
