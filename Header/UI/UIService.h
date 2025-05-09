@@ -1,47 +1,55 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
 using namespace sf;
 using namespace std;
 
+// Namespace for UI-related classes
 namespace UI
 {
+    // UIService class: Manages the display of player scores in the Pong game
     class UIService
     {
     private:
+        // Font and Text
+        Font font;                    // Font for displaying scores
+        Text left_score_text;         // Text for Player 1's score (left side)
+        Text right_score_text;        // Text for Player 2's score (right side)
 
-        Font font;
-        Text left_score_text;
-        Text right_score_text;
+        // File Path
+        string texture_path = "Assets/Fonts/VarelaRound-Regular.ttf"; // Path to font file
 
-        string texture_path = "Assets/Fonts/VarelaRound-Regular.ttf";
+        // Text Configuration
+        int font_size = 40;           // Font size for score text
+        Color font_color = Color::White; // Font color for score text
+        string initial_string = "00"; // Initial score display (two digits)
 
-        int font_size = 40;
-        Color font_color = Color::White;
-        string initial_string = "00";
+        // Score Positions
+        float left_score_postion_x = 570.0f; // X-position for Player 1's score
+        float left_score_postion_y = 30.0f;  // Y-position for Player 1's score
+        float right_score_position_x = 670.0f; // X-position for Player 2's score
+        float right_score_position_y = 30.0f;  // Y-position for Player 2's score
 
-        float left_score_postion_x = 570.0f;
-        float left_score_postion_y = 30.0f;
+        // Scores
+        int player1_score = 0;        // Player 1's current score
+        int player2_score = 0;        // Player 2's current score
 
-        float right_score_position_x = 670.0f;
-        float right_score_position_y = 30.0f;
-
-        int player1_score = 0;
-        int player2_score = 0;
-
-        string formatScore(int score);
-
-        void loadFontTexture();
-        void createLeftScoreText();
-        void createRightScoreText();
+        // Private Functions
+        string formatScore(int score); // Format score as two-digit string (e.g., "05")
+        void loadFontTexture();       // Load font from file
+        void createLeftScoreText();   // Set up Player 1's score text
+        void createRightScoreText();  // Set up Player 2's score text
 
     public:
+        // Constructor
+        UIService();                  // Initialize UI components
 
-        UIService();
+        // Score Management
+        void incrementPlayer1Score(); // Increment Player 1's score
+        void incrementPlayer2Score(); // Increment Player 2's score
 
-        void incrementPlayer1Score();
-        void incrementPlayer2Score();
-
-        void update();
-        void render(RenderWindow* game_window);
+        // Game Logic
+        void update();                // Update score display text
+        void render(RenderWindow* game_window); // Draw scores to the window
     };
 }

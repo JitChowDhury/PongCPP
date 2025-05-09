@@ -1,31 +1,39 @@
 #pragma once
+
 #include <SFML/Audio.hpp>
 #include <string>
 
+// Namespace for sound-related classes
 namespace Sound
 {
+    // Enum for different sound effect types
     enum class SoundType
     {
-        BALL_BOUNCE
+        BALL_BOUNCE    // Sound played when the ball bounces off a paddle or boundary
     };
 
+    // SoundManager class: Manages sound effects and background music for the game
     class SoundManager
     {
     private:
-        static sf::Music backgroundMusic;
-        static sf::Sound soundEffect;
-        static sf::SoundBuffer ballBounce;
+        // Static Sound Resources
+        static sf::Music backgroundMusic;      // Background music for the game
+        static sf::Sound soundEffect;          // Sound effect player
+        static sf::SoundBuffer ballBounce;     // Buffer for ball bounce sound effect
 
-        static float backgroundMusicVolume;
-        static const std::string bgmPath;
-        static const std::string ballBouncePath;
+        // Configuration
+        static float backgroundMusicVolume;    // Volume level for background music (0-100)
+        static const std::string bgmPath;      // File path to background music ("Assets/Sounds/Pong_bgm.mp3")
+        static const std::string ballBouncePath; // File path to ball bounce sound ("Assets/Sounds/Ball_Bounce.wav")
 
     public:
-        static void Initialize();
-        static void PlaySoundEffect(SoundType soundType);
-        static void PlayBackgroundMusic();
+        // Static Public Functions
+        static void Initialize();              // Initialize sound resources (load files)
+        static void PlaySoundEffect(SoundType soundType); // Play a specific sound effect
+        static void PlayBackgroundMusic();     // Play the background music on a loop
 
     private:
-        static void LoadSoundFromFile();
+        // Private Helper Function
+        static void LoadSoundFromFile();       // Load sound files into buffers and music
     };
 }
