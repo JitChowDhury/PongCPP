@@ -33,7 +33,7 @@ Run Pong.exe.
 🛠️ Build from Source
 
 # Clone the repository
-git clone https://github.com/yourusername/pong.git
+git clone https://github.com/JitChowDhury/PongCPP.git
 
 cd pong
 
